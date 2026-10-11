@@ -232,3 +232,42 @@
     border-width: 0;
   }
 }
+
+/* Android TV / remote-control mode */
+html.tv-mode,
+html.tv-mode body {
+  cursor: none;
+  overscroll-behavior: none;
+}
+
+html.tv-mode body {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html.tv-mode :is(a, button, input, select, textarea, [role="button"], [tabindex]:not([tabindex="-1"])) {
+  scroll-margin-block: 12vh;
+}
+
+html.tv-mode :is(a, button, input, select, textarea, [role="button"], [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 3px solid #ff9f1c !important;
+  outline-offset: 4px;
+  box-shadow: 0 0 0 5px rgba(255, 159, 28, 0.22);
+  transform: scale(1.035);
+  z-index: 20;
+  position: relative;
+}
+
+html.tv-mode :is(button, a, [role="button"]) {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html.tv-mode iframe {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.tv-mode :is(a, button, [role="button"]):focus-visible {
+    transform: none;
+  }
+}
