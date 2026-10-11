@@ -69,18 +69,12 @@ export const metadata: Metadata = {
     google: "MFXUidrMrxwBxIyEzqURpd37qb60RTjPyxP8ZirR4KQ",
     yandex: "your-yandex-verification-code",
     yahoo: "your-yahoo-verification-code",
-    // other: {
-    //   me: ['my-email', 'my-link'],
-    // },
   },
 };
 
-import Script from "next/script";
-import dynamic from 'next/dynamic';
 import PageTransition from "@/components/PageTransition";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
 import ClientOnlyComponents from "@/components/ClientOnlyComponents";
 
 export default function RootLayout({
@@ -93,36 +87,6 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://image.tmdb.org" />
         <link rel="dns-prefetch" href="https://image.tmdb.org" />
-        {/* Google Analytics */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-CSBPEBZBJF" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-CSBPEBZBJF');
-          `}
-        </Script>
-
-        <script
-          data-cfasync="false"
-          async
-          type="text/javascript"
-          src="//fi.chaufergabelle.com/rnoAntQzBel2t/151988"
-        />
-        <script
-          data-cfasync="false"
-          async
-          type="text/javascript"
-          src="//mr.acktontables.com/svXxFoBaWzN/153387"
-        />
-        <script
-          data-cfasync="false"
-          async
-          type="text/javascript"
-          src="//ri.thlaspiyeaoman.com/iZvpfdi16luL/153388"
-        />
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -171,4 +135,3 @@ export default function RootLayout({
     </html>
   );
 }
-
