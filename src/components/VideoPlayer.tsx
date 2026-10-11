@@ -241,8 +241,10 @@ export default function VideoPlayer({
                     frameBorder="0"
                     scrolling="no"
                     referrerPolicy="origin"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    {...(currentServer.useSandbox ? { sandbox: "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" } : {})}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    /* Restrict third-party players from opening new windows or navigating the parent page.
+                       This reduces ad pop-ups/redirects but cannot remove ads rendered inside the provider itself. */
+                    sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-presentation"
                 ></iframe>
 
 
